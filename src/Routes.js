@@ -26,7 +26,6 @@ ReactDOM.render(
       <Route path="/ethereum" component={Ethereum} />
       <Route path="/dash" component={Dash} />
       <Route path="/litecoin" component={Litecoin} />
-      <Redirect from='*' to='/' />
     </Route>
   </Router>, document.getElementById('app'))
 
