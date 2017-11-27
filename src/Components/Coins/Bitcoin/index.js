@@ -46,20 +46,20 @@ class Bitcoin extends Component {
 		.then(function(data) {
 		let history = data.Data;
 		return history.map(function(history) {
-		  let li = createNode('li'),
-		      span = createNode('span');
-		      var open = parseFloat(history.open).toFixed(2);
-		      var close = parseFloat(history.close).toFixed(2);
-		      var high = parseFloat(history.high).toFixed(2);
-		      var low = parseFloat(history.low).toFixed(2);
-          var timestamp = (history.time)*1000;
-          var toDay = new Date(timestamp).getDate();
-          var toMonth = new Date(timestamp).getMonth()+1;
-          var toYear = new Date(timestamp).getFullYear();
-          var date = toDay+'/'+toMonth+'/'+toYear;
-		  span.innerHTML = `<b>Date:${date}</b> Open: ${open} USD<br/>Close: ${close} USD`;
-		  append(li, span);
-		  append(ul, li);
+			let li = createNode('li'),
+			span = createNode('span');
+			var open = parseFloat(history.open).toFixed(2);
+			var close = parseFloat(history.close).toFixed(2);
+			var high = parseFloat(history.high).toFixed(2);
+			var low = parseFloat(history.low).toFixed(2);
+			var timestamp = (history.time)*1000;
+			var toDay = new Date(timestamp).getDate();
+			var toMonth = new Date(timestamp).getMonth()+1;
+			var toYear = new Date(timestamp).getFullYear();
+			var date = toDay+'/'+toMonth+'/'+toYear;
+			span.innerHTML = `<b>Date:${date}</b> Open: ${open} USD<br/>Close: ${close} USD`;
+			append(li, span);
+			append(ul, li);
 		})
 		})
 		.catch(function(error) {
