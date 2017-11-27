@@ -1,0 +1,149 @@
+@mixin make-body($body-bg, $body-font-size) {
+	background-color: $body-bg;
+	font-size: $body-font-size;
+
+	@if (lightness($body-bg) < 30) {
+  		color: $text-white;
+	} @else {
+  		color: $text-dark;
+	}
+}
+
+@mixin make-navbar($navbar-bg) {
+	width: 100%;
+	display: block;
+	height: $navbar-height;
+	position: $navbar-position;
+	line-height: $navbar-height;
+	background-color: $navbar-bg;
+
+	@if (lightness($navbar-bg) < 30) {
+  		color: $text-white;
+
+		.icon-bar {
+  			background-color: $text-white;
+  		}
+
+	} @else {
+  		color: $text-dark;
+
+		.drawer:hover,
+		.nav-menu li:hover {
+  				background-color: rgba(0,0,0,0.1);
+  			}
+
+  		.icon-bar {
+  			background-color: $text-dark;
+  		}
+	}
+}
+
+@mixin make-header($header-bg, $header-height:100vh) {
+	background-color: $header-bg;
+
+	@if ($navbar-position == fixed) {
+  		padding-top: (42vh-$navbar-height);
+		margin-top: $navbar-height;
+	}
+
+	@if (lightness($header-bg) < 30) {
+  		color: $text-white;
+	} @else {
+  		color: $text-dark;
+	}
+}
+
+@mixin make-bg($name, $color) {
+	.bg-#{$name} {
+		background-color: $color;
+
+		& a {
+			color: inherit;
+		}
+	}
+
+	@if (lightness($color) < 30) {
+  		color: $text-white;
+	} @else {
+  		color: $text-dark;
+	}
+}
+
+@mixin make-section($section-bg) {
+	background-color: $section-bg;
+	display: block;
+
+	@if (lightness($section-bg) < 30) {
+  		color: $text-white;
+	} @else {
+  		color: $text-dark;
+	}
+}
+
+@mixin make-button($name, $color) {
+	.btn-#{$name} {
+		color: $color;
+		border-color: $color;
+
+		& a {
+			color: inherit;
+		}
+
+		&:hover {
+			color: white;
+			background: $color;
+			border-color: $color;
+		}
+	}
+
+	@if $name == white {
+		.btn-white {
+			&:hover {
+				color: $bg-dark;
+			}
+		}
+	}
+}
+
+@mixin make-layout($layout-type, $row-layout:20% 60% 20%, $col-gap:10px, $row-gap: 10px) {
+	.grid {
+	  display: grid;
+	  height: 400px;
+	  grid-template-columns: auto;
+	  grid-template-rows: 20% 60% 20%;
+	  grid-column-gap: $col-gap;
+	  grid-row-gap: $row-gap;
+	  grid-template-areas: $layout-type;
+	}
+
+	@if $layout-type == $landing-page {
+		.grid-aside {
+			display: none;
+		}
+	}
+
+	@if $layout-type == $two-sidebars {
+		.grid {
+			grid-template-rows: 20% 60% 20%;
+		}
+	}
+
+	@if $layout-type == $two-sidebars-right {
+		.grid {
+			grid-template-rows: 60% 20% 20%;
+		}
+	}
+
+	@if $layout-type == $two-sidebars-left {
+		.grid {
+			grid-template-rows: 20% 20% 60%;
+		}
+	}
+
+	@supports not (display: grid) {
+	    .grid {
+	      display: none!important;
+	    }
+	}
+
+}

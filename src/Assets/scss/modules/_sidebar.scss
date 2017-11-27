@@ -1,0 +1,25 @@
+@media (min-width: $tablet) {
+
+  .sidebar {
+    background-color: #363a44;
+    color: white;
+    width: 30%;
+    max-width: 300px;
+    height: 100vh-$navbar-height;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .profile-photo {
+    background-color: $amethyst;
+    margin-right: 10px;
+    border-radius: 50%;
+    display: block;
+    height: 30px;
+    width: 30px;
+  }
+
+}

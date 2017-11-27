@@ -1,0 +1,68 @@
+// COLORS
+// ---------------------
+
+$red: #e74c3c;
+$blue: #1e90ff;
+$gray: #ecf0f1;
+$green: #1D9F75;
+$orange: #e67e22;
+$emerald: #2ecc71;
+$yellow: #f1c40f;
+$amethyst: #9b59b6;
+$tomato: tomato;
+$indigo: #3F51B5;
+$light-green: #4CAF50;
+$white: #f7f7f7;
+
+$bg-dark: #252A34;
+$bg-white: #f9f9f9;
+$text-dark: $bg-dark;
+$text-white: $bg-white;
+
+
+// SETTINGS
+// ---------------------
+
+$total-col:	12;
+$color-theme: $blue;
+$navbar-height: 15vh;
+$navbar-position:relative;
+
+
+// GRID LAYOUTS
+// ---------------------
+
+$landing-page:		"header header header"
+    				"main   main   main"
+   					"footer footer footer"; 
+
+$one-sidebar-right: "header header header"
+    				"main   main   side-right"
+   					"footer footer footer";
+
+$one-sidebar-left: "header header header"
+    				"side-left   main   main"
+   					"footer footer footer";  					
+
+$two-sidebars:		"header header header"
+    				"side-left   main   side-right"
+   					"footer footer footer";
+
+$two-sidebars-right:"header header header"
+    				"main   side-left   side-right"
+   					"footer footer footer";
+
+$two-sidebars-left:"header header header"
+    				"side-left   side-right   main"
+   					"footer footer footer";
+
+$auto-row: auto;
+   					
+
+// BREAKPOINTS
+// ---------------------
+
+$mobile: 480px;
+$tablet: 960px;
+$notebook: 1200px;
+$desktop: 1201px;
