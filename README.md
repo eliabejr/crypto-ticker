@@ -1,3 +1,3 @@
-# Welcome to Crypto Watcher!
+# Welcome to Crypto Ticker!
 
-Modify your prefered coins on "Coins" folder.
+On index.js you will find a function that receives a coin (BTC/ETH/ETC/DASH) and a local currency (USD/EUR/BRL)
